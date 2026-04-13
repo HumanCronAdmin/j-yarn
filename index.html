@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JYarn - Japanese Yarn Curation Database</title>
+<meta name="description" content="A curated database of Japanese yarns for international knitters and crocheters. Compare fiber content, yardage, and find your perfect skein.">
+<meta property="og:title" content="JYarn - Japanese Yarn Curation Database">
+<meta property="og:description" content="A curated database of Japanese yarns for international knitters and crocheters.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://humancronadmin.github.io/j-yarn/">
+<link rel="canonical" href="https://humancronadmin.github.io/j-yarn/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand">J<span>Yarn</span></a>
+  <div class="nav-links">
+    <a href="database.html">Database</a>
+    <a href="#guides">Guides</a>
+    <a href="#about">About</a>
+  </div>
+</nav>
+<section class="hero">
+  <h1>Every Skein Tells a <em>Story</em>.</h1>
+  <p>Discover Japan's finest yarns. A curated database for international knitters and crocheters who appreciate craftsmanship, color, and fiber quality.</p>
+  <a href="database.html" class="btn btn-primary">Browse the Database</a>
+</section>
+<section class="section">
+  <h2 class="section-title">The Problem</h2>
+  <div class="problem-grid" id="problems"></div>
+</section>
+<section class="section" style="background:var(--dark);color:#FFF;max-width:none;padding:48px 16px">
+  <div class="stats-row" id="stats"></div>
+</section>
+<section class="section" style="text-align:center">
+  <h2 class="section-title">Ready to Find Your Yarn?</h2>
+  <p style="color:var(--muted);margin-bottom:24px;max-width:480px;margin-left:auto;margin-right:auto">Filter by weight category, brand, fiber type, price, and yardage. Every listing includes real specs and expert notes.</p>
+  <a href="database.html" class="btn btn-primary">Explore the Database</a>
+</section>
+<footer class="footer" id="about">
+  <p>JYarn is an open-source project. Every skein tells a story. Find yours.</p>
+  <p style="margin-top:8px"><a href="https://github.com/humancronadmin">GitHub</a></p>
+</footer>
+<script>
+const problems=[
+  {icon:"\uD83E\uDDF6",title:"Best Japanese yarns unknown overseas",desc:"Noro, Hamanaka, Daruma and more produce stunning yarns that international crafters rarely discover through standard retailers."},
+  {icon:"\u2696\uFE0F",title:"Hard to compare fiber content across brands",desc:"Weight in grams, yardage in meters, needle sizes in millimeters. Specs are scattered across Japanese-only websites."},
+  {icon:"\uD83C\uDFA8",title:"Color palettes only available in Japan",desc:"Unique hand-dyed colorways and specialty fibers that never make it to international yarn shops or Amazon searches."}
+];
+const stats=[
+  {num:"30+",label:"Yarns"},
+  {num:"6",label:"Brands"},
+  {num:"Wool to Silk",label:"Fiber Range"}
+];
+document.getElementById("problems").innerHTML=problems.map(p=>`<div class="problem-card"><div class="icon">${p.icon}</div><h3>${p.title}</h3><p>${p.desc}</p></div>`).join("");
+document.getElementById("stats").innerHTML=stats.map(s=>`<div class="stat"><div class="num">${s.num}</div><div class="label">${s.label}</div></div>`).join("");
+</script>
+</body>
+</html>
